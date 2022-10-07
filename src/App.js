@@ -17,8 +17,8 @@ function App() {
           <Router>
             <Routes>
               <Route exact path="/" element={<Landing />} />
-              <Route exact path="/about" element={<About />} />
-              <Route exact path="/movie_details" element={<MovieDetails />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/movie_details" element={<MovieDetails />} />
             </Routes>
           </Router>
         </Provider>

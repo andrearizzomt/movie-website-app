@@ -13,7 +13,7 @@ const Landing = () => {
 
   const dispatch = useDispatch();
   const popularMoviesResults = useSelector(
-    (state) => state.popularMovies.value.results
+    (state) => state.popularMoviesData.value.results
   );
 
   useEffect(() => {
@@ -31,6 +31,7 @@ const Landing = () => {
             .map((popularMovieResult) => (
               <div className="movieCardContainer" key={popularMovieResult.id}>
                 <MovieCard
+                  filmId={popularMovieResult.id}
                   title={popularMovieResult.title}
                   vote={popularMovieResult.vote_average}
                   imageSource={`https://image.tmdb.org/t/p/w300/${popularMovieResult.poster_path}`}

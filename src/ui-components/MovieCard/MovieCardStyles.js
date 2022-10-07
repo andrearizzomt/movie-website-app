@@ -6,7 +6,7 @@ export const MovieCardStyled = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 5px;
-  width: 75%;
+  // width: 75%;
 
   .container {
     position: relative;

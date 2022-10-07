@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import media from "../../MediaSizeStyles";
 
 export const AboutStyled = styled.div`
   background: red;
