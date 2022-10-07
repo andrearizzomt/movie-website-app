@@ -1,24 +1,29 @@
-import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import { Provider } from "react-redux";
 import { store } from "./store";
-
-import Landing from "./ui-components/Landing";
+import { AppStyled } from "./AppStyles";
+import { GlobalStyle } from "./Global.css";
+import Landing from "./pages/Landing/Landing";
+import About from "./pages/About/About";
+import MovieDetails from "./pages/MovieDetails/MovieDetails";
 
 function App() {
   return (
-    <div className="App">
-      <Provider store={store}>
-        <Router>
-          <Routes>
-            <Route exact path="/" element={<Landing />} />
-            {/* <Route exact path="/about" element={<About />} /> */}
-            {/* <Route exact path="/movie_details" element={<MovieDetails />} /> */}
-          </Routes>
-        </Router>
-      </Provider>
-    </div>
+    <>
+      <GlobalStyle />
+      <AppStyled>
+        <Provider store={store}>
+          <Router>
+            <Routes>
+              <Route exact path="/" element={<Landing />} />
+              <Route exact path="/about" element={<About />} />
+              <Route exact path="/movie_details" element={<MovieDetails />} />
+            </Routes>
+          </Router>
+        </Provider>
+      </AppStyled>
+    </>
   );
 }
 
