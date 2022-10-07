@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import media from "../../MediaSizeStyles";
 
 export const MovieDetailsStyled = styled.div`
   background: red;
@@ -10,7 +9,13 @@ export const MovieDetailsStyled = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  .aboutContent {
+  .movieDetailsContent {
     padding: 1rem;
+  }
+
+  .movieDetailSections {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `;

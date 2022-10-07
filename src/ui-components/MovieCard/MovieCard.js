@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { MovieCardStyled } from "./MovieCardStyles";
 
 const MovieCard = (props) => {
-  const { title, vote, imageSource } = props;
+  const { filmId, title, vote, imageSource } = props;
 
   return (
     <MovieCardStyled>
@@ -10,7 +11,9 @@ const MovieCard = (props) => {
       <div className="container">
         <img className="image" src={imageSource} alt="movie poster" />
         <div className="overlay">
-          <div className="overlayText">More Info</div>
+          <Link to={"/movie_details"} state={{ filmId: filmId }}>
+            <div className="overlayText">More Info</div>
+          </Link>
         </div>
       </div>
       <h5>Vote Average: {vote}</h5>

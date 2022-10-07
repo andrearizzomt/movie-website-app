@@ -1,7 +1,7 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 const popularMoviesSlice = createSlice({
-  name: "popularMovies",
+  name: "popularMoviesData",
   initialState: { value: { results: [] } },
   reducers: {
     getPopularMovies: (state, action) => {
@@ -14,6 +14,6 @@ export const { getPopularMovies } = popularMoviesSlice.actions;
 
 export const store = configureStore({
   reducer: {
-    popularMovies: popularMoviesSlice.reducer,
+    popularMoviesData: popularMoviesSlice.reducer,
   },
 });
