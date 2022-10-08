@@ -36,6 +36,10 @@ export const MovieCardDetailsStyled = styled.div`
     text-align: justify;
   }
 
+  .buttonContainer {
+    width: 100%;
+  }
+
   ${media.laptop} {
     align-items: flex-start;
     justify-content: center;

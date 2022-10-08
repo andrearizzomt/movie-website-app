@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
+import Button from "../Button/Button";
+import Modal from "../Modal/Modal";
 import { MovieCardDetailsStyled } from "./MovieCardDetailsStyles";
 
 const MovieCardDetails = (props) => {
-  const { title, date, rating, overview } = props;
+  const { title, date, rating, overview, officialTrailerKey } = props;
+
+  const [activeModal, setActiveModal] = useState("");
+
+  const showModal = () => {
+    if (activeModal === "") {
+      setActiveModal("active");
+    } else {
+      setActiveModal("");
+    }
+  };
 
   const year = date.substring(0, 4);
   const ratingInPercentage = rating * 10;
@@ -23,6 +35,15 @@ const MovieCardDetails = (props) => {
       </div>
       <h3>Overview:</h3>
       <article>{overview}</article>
+      <div className="buttonContainer" onClick={showModal}>
+        <Button primary="primary" btnText="Watch Trailer" onClick />
+      </div>
+      <Modal
+        active={activeModal}
+        officialTrailerKey={officialTrailerKey}
+        activeModal={activeModal}
+        setActiveModal={setActiveModal}
+      />
     </MovieCardDetailsStyled>
   );
 };
