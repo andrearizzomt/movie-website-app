@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import { MovieCardStyled } from "./MovieCardStyles";
 
 const MovieCard = (props) => {
-  const { filmId, title, vote, imageSource } = props;
+  const { primary, filmId, title, rating, imageSource } = props;
+
+  const ratingInPercentage = rating * 10;
 
   return (
-    <MovieCardStyled>
+    <MovieCardStyled primary={primary}>
       <h3>{title}</h3>
       <div className="container">
         <img className="image" src={imageSource} alt="movie poster" />
@@ -16,7 +18,7 @@ const MovieCard = (props) => {
           </Link>
         </div>
       </div>
-      <h5>Vote Average: {vote}</h5>
+      <h5>User Rating: {ratingInPercentage}%</h5>
     </MovieCardStyled>
   );
 };
