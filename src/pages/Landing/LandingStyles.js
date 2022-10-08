@@ -11,6 +11,9 @@ export const LandingStyled = styled.div`
   justify-content: space-between;
 
   .landingContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 1rem;
   }
 
@@ -28,6 +31,10 @@ export const LandingStyled = styled.div`
   }
 
   ${media.mobile} {
+    .landingContent {
+      display: block;
+    }
+
     .movieCardsContentWrap {
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }

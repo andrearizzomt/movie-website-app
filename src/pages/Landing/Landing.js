@@ -31,9 +31,10 @@ const Landing = () => {
             .map((popularMovieResult) => (
               <div className="movieCardContainer" key={popularMovieResult.id}>
                 <MovieCard
+                  primary="primary"
                   filmId={popularMovieResult.id}
                   title={popularMovieResult.title}
-                  vote={popularMovieResult.vote_average}
+                  rating={popularMovieResult.vote_average}
                   imageSource={`https://image.tmdb.org/t/p/w300/${popularMovieResult.poster_path}`}
                 />
               </div>

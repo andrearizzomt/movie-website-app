@@ -36,12 +36,16 @@ const MovieDetails = () => {
           )}
           {popularMoviesResults.length !== 0 && (
             <MovieCard
-              title={selectedMovie[0].title}
-              vote={selectedMovie[0].vote_average}
+              primary=""
               imageSource={`https://image.tmdb.org/t/p/w300/${selectedMovie[0].poster_path}`}
             />
           )}
-          <MovieCardDetails />
+          <MovieCardDetails
+            title={selectedMovie[0].title}
+            date={selectedMovie[0].release_date}
+            rating={selectedMovie[0].vote_average}
+            overview={selectedMovie[0].overview}
+          />
         </div>
       </div>
       <Footer />
