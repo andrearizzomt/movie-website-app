@@ -43,7 +43,7 @@ export const MovieCardDetailsStyled = styled.div`
   ${media.laptop} {
     align-items: flex-start;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
     .sideBySide {
       flex-direction: row;
     }
