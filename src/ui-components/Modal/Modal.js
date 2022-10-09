@@ -11,22 +11,25 @@ const Modal = (props) => {
   };
 
   return (
-    <div className="trailerVideoContainer">
+    <>
       {activeModal === "" && null}
       {activeModal === "active" && (
         <ModalStyled active={active} onClick={closeModal}>
-          <iframe
-            width="1280"
-            height="800"
-            src={`https://www.youtube-nocookie.com/embed/${officialTrailerKey}`}
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+          <div className="iframeContainer">
+            <iframe
+              className="iframeResponsive"
+              width="1280"
+              height="800"
+              src={`https://www.youtube-nocookie.com/embed/${officialTrailerKey}`}
+              title="YouTube video player"
+              frameBorder="0"
+              // allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
         </ModalStyled>
       )}
-    </div>
+    </>
   );
 };
 
