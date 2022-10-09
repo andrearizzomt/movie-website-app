@@ -9,7 +9,7 @@ const Header = () => {
       </HeaderLink>
       <ul className="menuLinks">
         <HeaderLink to="/about">
-          <li>About</li>
+          <li>About Us</li>
         </HeaderLink>
         <li>Search Box Component</li>
       </ul>
