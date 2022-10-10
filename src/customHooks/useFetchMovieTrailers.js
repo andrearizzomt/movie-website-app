@@ -1,11 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 
-const useFetchMovieTrailers = (filmId) => {
+const useFetchMovieTrailers = (filmIdData) => {
+  filmIdData = JSON.parse(localStorage.getItem("SELECTED_FILMID"));
+
   const [movieTrailers, setMovieTrailers] = useState([]);
 
   const TRAILER_BASE_URL = "https://api.themoviedb.org/3/movie";
-  const FILM_ID = `/${filmId}/videos`;
+  const FILM_ID = `/${filmIdData}/videos`;
   const API_KEY = `?api_key=${process.env.REACT_APP_TMDB_API_KEY}`;
 
   useEffect(() => {
@@ -27,7 +29,7 @@ const useFetchMovieTrailers = (filmId) => {
     };
 
     fetchMovieTrailers();
-  }, [filmId]);
+  }, [filmIdData]);
 
   return { movieTrailers };
 };
