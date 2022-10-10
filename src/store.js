@@ -1,19 +1,19 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
-const popularMoviesSlice = createSlice({
-  name: "popularMoviesData",
+const moviesSlice = createSlice({
+  name: "moviesData",
   initialState: { value: { results: [] } },
   reducers: {
-    getPopularMovies: (state, action) => {
+    getMovies: (state, action) => {
       state.value = action.payload;
     },
   },
 });
 
-export const { getPopularMovies } = popularMoviesSlice.actions;
+export const { getMovies } = moviesSlice.actions;
 
 export const store = configureStore({
   reducer: {
-    popularMoviesData: popularMoviesSlice.reducer,
+    moviesData: moviesSlice.reducer,
   },
 });

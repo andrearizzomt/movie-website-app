@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
 import useFetchPopularMovies from "../../customHooks/useFetchPopularMovies";
-import { getPopularMovies } from "../../store";
+import { getMovies } from "../../store";
 import { useDispatch, useSelector } from "react-redux";
 import MovieCard from "../../ui-components/MovieCard/MovieCard";
 import Header from "../../ui-components/Header/Header";
@@ -14,13 +14,13 @@ const Landing = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getPopularMovies({ results: popularMovies }));
+    dispatch(getMovies({ results: popularMovies }));
     // Storing Movie Results in local storage to be available for Movie Details Page if refreshed
     localStorage.setItem("MOVIE_RESULTS", JSON.stringify(popularMovies));
   }, [popularMovies]);
 
   const popularMoviesResults = useSelector(
-    (state) => state.popularMoviesData.value.results
+    (state) => state.moviesData.value.results
   );
 
   return (
