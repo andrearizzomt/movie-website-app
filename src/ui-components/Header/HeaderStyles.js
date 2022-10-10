@@ -18,6 +18,7 @@ export const HeaderStyled = styled.div`
     flex-direction: column;
     justify-content: space-evenly;
     gap: 20px;
+    font-size: 1.3rem;
   }
 
   li {
@@ -30,6 +31,7 @@ export const HeaderStyled = styled.div`
 
     .menuLinks {
       flex-direction: row;
+      align-items: center;
     }
   }
 `;
