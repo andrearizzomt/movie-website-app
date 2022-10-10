@@ -12,19 +12,22 @@ const Landing = () => {
   const { popularMovies } = useFetchPopularMovies();
 
   const dispatch = useDispatch();
-  const popularMoviesResults = useSelector(
-    (state) => state.popularMoviesData.value.results
-  );
 
   useEffect(() => {
     dispatch(getPopularMovies({ results: popularMovies }));
+    // Storing Movie Results in local storage to be available for Movie Details Page if refreshed
+    localStorage.setItem("MOVIE_RESULTS", JSON.stringify(popularMovies));
   }, [popularMovies]);
+
+  const popularMoviesResults = useSelector(
+    (state) => state.popularMoviesData.value.results
+  );
 
   return (
     <LandingStyled>
       <Header />
       <div className="landingContent">
-        <h1>Trending Movies</h1>
+        <h1>Trending Popular Movies</h1>
         <div className="movieCardsContentWrap">
           {popularMoviesResults
             .filter((popularMovieResult, id) => id < 8)
