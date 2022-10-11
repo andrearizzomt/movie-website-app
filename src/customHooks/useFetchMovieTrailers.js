@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 
-const useFetchMovieTrailers = (filmIdData) => {
+export default function useFetchMovieTrailers(filmIdData) {
   filmIdData = JSON.parse(localStorage.getItem("SELECTED_FILMID"));
 
   const [movieTrailers, setMovieTrailers] = useState([]);
@@ -31,7 +31,5 @@ const useFetchMovieTrailers = (filmIdData) => {
     fetchMovieTrailers();
   }, [filmIdData]);
 
-  return { movieTrailers };
-};
-
-export default useFetchMovieTrailers;
+  return [movieTrailers, setMovieTrailers];
+}
