@@ -18,8 +18,8 @@ const Landing = () => {
 
   const [searchPopMovies] = useFetchPopularMovies("discover");
 
-  const [filmCategory] = useFetchMovieCategories();
-  console.log(filmCategory);
+  // const [filmCategory] = useFetchMovieCategories();
+  // console.log(filmCategory);
 
   const dispatch = useDispatch();
 
@@ -32,8 +32,6 @@ const Landing = () => {
   const popularMoviesResults = useSelector(
     (state) => state.moviesData.value.results
   );
-
-  console.log(popularMoviesResults);
 
   return (
     <LandingStyled>
