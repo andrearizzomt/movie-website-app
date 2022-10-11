@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import useFetchMovieTrailers from "../../customHooks/useFetchMovieTrailers";
 import Footer from "../../ui-components/Footer/Footer";
 import Header from "../../ui-components/Header/Header";
@@ -41,7 +40,7 @@ const MovieDetails = () => {
   // console.log(selectedMovie[0].id, selectedMovie[0].title);
 
   // Get list of all movie trailers for the filmId
-  const { movieTrailers } = useFetchMovieTrailers(filmIdData);
+  const [movieTrailers] = useFetchMovieTrailers(filmIdData);
   // console.log(movieTrailers);
 
   // Filtering for official trailer movie (on Youtube) as some may have more than one movie clip

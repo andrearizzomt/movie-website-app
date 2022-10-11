@@ -6,6 +6,7 @@ import { GlobalStyle } from "./Global.css";
 import Landing from "./pages/Landing/Landing";
 import About from "./pages/About/About";
 import MovieDetails from "./pages/MovieDetails/MovieDetails";
+import Search from "./pages/Search/Search";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
               <Route exact path="/" element={<Landing />} />
               <Route path="/about" element={<About />} />
               <Route path="/movie_details" element={<MovieDetails />} />
+              <Route path="/search" element={<Search />} />
             </Routes>
           </Router>
         </Provider>

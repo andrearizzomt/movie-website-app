@@ -1,5 +1,4 @@
 import React from "react";
-import SearchBar from "../SearchBar/SearchBar";
 import { HeaderLink, HeaderStyled } from "./HeaderStyles";
 
 const Header = () => {
@@ -12,9 +11,6 @@ const Header = () => {
         <HeaderLink to="/about">
           <li>About Us</li>
         </HeaderLink>
-        <li>
-          <SearchBar />
-        </li>
       </ul>
     </HeaderStyled>
   );

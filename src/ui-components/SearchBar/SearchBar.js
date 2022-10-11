@@ -1,17 +1,10 @@
-import React, { useState } from "react";
-import { useSearchParams } from "react-router-dom";
-import useFetchSearchQuery from "../../customHooks/useFetchSearchQuery";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import { SearchBarStyled } from "./SearchBarStyles";
 
-const SearchBar = () => {
-  const [movieName, setMovieName] = useState("");
-  const [searchParams, setSearchParams] = useSearchParams("");
-  const [query, setQuery] = useState(searchParams.get("query"));
-  const [searchQuery, setSearchQuery] = useFetchSearchQuery(query);
-
-  // update store and dispatch reducer with returned searchQuery from useFetchSearchQuery customHook
-  // console.log(searchQuery);
+const SearchBar = (props) => {
+  const { movieName, setMovieName, setSearchParams, query, setQuery } = props;
 
   const handleInputChange = (e) => {
     setMovieName(e.target.value);
@@ -35,7 +28,9 @@ const SearchBar = () => {
           onChange={handleInputChange}
         ></input>
         <div onClick={searchButtonClick}>
-          <Button primary="" btnText="Search" />
+          <Link to={"/search"} state={{ movieName: movieName }}>
+            <Button primary="" btnText="Search" />
+          </Link>
         </div>
       </div>
     </SearchBarStyled>
